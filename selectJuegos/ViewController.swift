@@ -1,6 +1,8 @@
 import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
+    
+    var juegos = NSMutableArray()
 
     let informacion:[String] = ["Pandemic", "Gloomhaven", "Agricola"]
     
@@ -17,14 +19,14 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(informacion)
-        return informacion.count        
+        return juegos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let fila = tableView.dequeueReusableCell(withIdentifier: "fila", for: indexPath)
-        fila.textLabel?.text = informacion[indexPath.row]
-        fila.detailTextLabel?.text = subtitulo[indexPath.row]
+        let juegoActual: Juego = juegos[indexPath.row] as! Juego
+        fila.textLabel?.text = juegoActual.JuegoMesa
+        fila.detailTextLabel?.text = juegoActual.Autor
         return fila
     }
     
@@ -33,27 +35,28 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
 
     func getFromJSON() {
-        
-        let URL = NSURL(string: "http://iesayala.ddns.net/mls/JuegosMesaXcode.php")
+        //To connect to the URL
+        let URL = NSURL(string: "http://iesayala.ddns.net/mls/SelectJuegosMesa.php")
         let request = NSMutableURLRequest(url: URL! as URL)
+        
+
         request.httpMethod = "POST"
-        
-        
         let postString = ""
         request.httpBody = postString.data(using: String.Encoding.utf8)
         
         let task = URLSession.shared.dataTask(with: request as URLRequest) {
             data, response, error in
-            
             if error != nil {
                 print("error=\(error)")
                 return
             }
+            //si no hay errores se llama al interpretador del JSON
             self.parseJSON(data!)
         }
         task.resume()
         
     }
+    
     func parseJSON(_ data:Data) {
         
         var jsonResult = NSArray()
@@ -67,31 +70,36 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         
         var jsonElement = NSDictionary()
-        let locations = NSMutableArray()
+        
         for i in 0 ..< jsonResult.count
         {
             
             jsonElement = jsonResult[i] as! NSDictionary
             
-            let location = LocationModel()
+            let juego = Juego()
             
             //the following insures none of the JsonElement values are nil through optional binding
-            if let cod = jsonElement["cod"] as? String,
-                let cosa = jsonElement["cosa"] as? String            {
+            if let JuegoMesa = jsonElement["JuegoMesa"] as? String,
+                let Autor = jsonElement["Autor"] as? String,
+                let TiempoMedio = jsonElement["TiempoMedio"] as? Int,
+                let Cooperativo = jsonElement["Cooperativo"] as? Int,
+                let Valoracion = jsonElement["Valoracion"] as? Double
+            {
                 
-                location.cod = cod
-                location.cosa = cosa
+                juego.JuegoMesa = JuegoMesa
+                juego.Autor = Autor
+                juego.TiempoMedio = TiempoMedio
+                juego.Cooperativo = Cooperativo
+                juego.Valoracion = Valoracion
                 
             }
             
-            locations.add(location)
-            
-            
+            juegos.add(juego)
             
         }
         
         // en locations tenemos el resulado de la select
-        print(locations)
+        print(juegos)
     }
 
 }
