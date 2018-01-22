@@ -1,14 +1,14 @@
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource{
+    
+
+    @IBOutlet weak var tableView: UITableView!
+    @IBAction func bt_recargar(_ sender: UIButton) {
+        self.tableView.reloadData()
+    }
     
     var juegos = NSMutableArray()
-
-    let informacion:[String] = ["Pandemic", "Gloomhaven", "Agricola"]
-    
-    
-    let subtitulo:[String] = ["Autor 1", "Autor 2", "Autor 3"]
-    
     
     let titulo = "Juegos"
     
@@ -16,6 +16,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         getFromJSON()
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -25,8 +26,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let fila = tableView.dequeueReusableCell(withIdentifier: "fila", for: indexPath)
         let juegoActual: Juego = juegos[indexPath.row] as! Juego
-        fila.textLabel?.text = juegoActual.JuegoMesa
-        fila.detailTextLabel?.text = juegoActual.Autor
+        fila.textLabel!.text = juegoActual.JuegoMesa
+        print(juegoActual.JuegoMesa)
+        fila.detailTextLabel!.text = juegoActual.Autor
         return fila
     }
     
@@ -51,6 +53,7 @@ class ViewController: UIViewController, UITableViewDataSource {
                 return
             }
             //si no hay errores se llama al interpretador del JSON
+            print("1")
             self.parseJSON(data!)
         }
         task.resume()
@@ -63,39 +66,34 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         do{
             jsonResult = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.allowFragments) as! NSArray
-            
+            print("2")
         } catch let error as NSError {
             print(error)
-            
         }
         
         var jsonElement = NSDictionary()
-        
         for i in 0 ..< jsonResult.count
         {
-            
             jsonElement = jsonResult[i] as! NSDictionary
             
             let juego = Juego()
             
             //the following insures none of the JsonElement values are nil through optional binding
-            if let JuegoMesa = jsonElement["JuegoMesa"] as? String,
-                let Autor = jsonElement["Autor"] as? String,
-                let TiempoMedio = jsonElement["TiempoMedio"] as? Int,
-                let Cooperativo = jsonElement["Cooperativo"] as? Int,
-                let Valoracion = jsonElement["Valoracion"] as? Double
-            {
-                
+            let JuegoMesa = jsonElement["JuegoMesa"] as? String
+            let Autor = jsonElement["Autor"] as? String
+            let TiempoMedio = jsonElement["TiempoMedio"] as? Int
+            let Cooperativo = jsonElement["Cooperativo"] as? Int
+            let Valoracion = jsonElement["Valoracion"] as? Double
+            
                 juego.JuegoMesa = JuegoMesa
+                print(JuegoMesa)
                 juego.Autor = Autor
+                print(Autor)
                 juego.TiempoMedio = TiempoMedio
                 juego.Cooperativo = Cooperativo
                 juego.Valoracion = Valoracion
-                
-            }
             
             juegos.add(juego)
-            
         }
         
         // en locations tenemos el resulado de la select
