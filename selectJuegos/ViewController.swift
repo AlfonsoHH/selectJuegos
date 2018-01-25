@@ -6,6 +6,7 @@ class ViewController: UIViewController, UITableViewDataSource{
     @IBOutlet weak var tableView: UITableView!
     @IBAction func bt_recargar(_ sender: UIButton) {
         self.tableView.reloadData()
+        
     }
     
     var juegos = NSMutableArray()
@@ -24,6 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let fila = tableView.dequeueReusableCell(withIdentifier: "fila", for: indexPath)
         let juegoActual: Juego = juegos[indexPath.row] as! Juego
         fila.textLabel!.text = juegoActual.JuegoMesa
