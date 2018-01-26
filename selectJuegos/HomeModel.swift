@@ -59,7 +59,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             let Valoracion = jsonElement["Valoracion"] as? Double
             
             juego.JuegoMesa = JuegoMesa
-            print(JuegoMesa)
+            print(JuegoMesa )
             juego.Autor = Autor
             print(Autor)
             juego.TiempoMedio = TiempoMedio
@@ -72,7 +72,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
         
         DispatchQueue.main.async(execute: { () -> Void in
             
-            self.delegate.itemsDownloaded(items: locations)
+            self.delegate.itemsDownloaded(items: juegos)
             
         })
     }
