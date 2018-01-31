@@ -6,27 +6,27 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var tableView: UITableView!
     @IBAction func bt_recargar(_ sender: UIButton) {
         self.tableView.reloadData()
-        
     }
-    
     var juegos: NSArray = NSArray()
     var juego : Juego = Juego()
     
     //var juegos = NSMutableArray()
     let titulo = "Juegos"
-    
     var Sections_Arr=[Data]()
+    var row=0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         //getFromJSON()
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        
         let homeModel = HomeModel()
         homeModel.delegate = self
-        homeModel.downloadItems()
-        
+        homeModel.downloadItems()        
     }
+    
     
     func itemsDownloaded(items: NSArray) {
         
@@ -50,6 +50,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return titulo
+    }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        self.row = indexPath.row
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "swipeLeft" {
+            if let variableEnviada = segue.destination as? ViewController2 {
+                variableEnviada.juego = self.juegos[row] as! Juego
+            }
+        }
     }
 }
 

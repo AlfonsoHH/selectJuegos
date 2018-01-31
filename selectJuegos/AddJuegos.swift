@@ -97,11 +97,9 @@ class Add: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             
             if ((responseString?.isEqual(to: "1")))! {
                 self.message = "Añadido"
-                
             }
             else {
-                self.message = "Error al añadir"
-                
+                self.message = "Error al añadir"                
             }
         }
         task.resume()
