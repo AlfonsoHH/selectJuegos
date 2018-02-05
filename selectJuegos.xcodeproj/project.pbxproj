@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3A1136E8201256AE006E1B10 /* Juego.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1136E7201256AE006E1B10 /* Juego.swift */; };
+		3A1BB26D2028BA190066B9EB /* HomeModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1BB26C2028BA190066B9EB /* HomeModel2.swift */; };
+		3A1BB26F2028BAD00066B9EB /* HomeModel3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1BB26E2028BAD00066B9EB /* HomeModel3.swift */; };
 		3A1EAC04201A71010025D148 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1EAC03201A71010025D148 /* HomeModel.swift */; };
 		3A3C3D1C2019201700C87880 /* AddJuegos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C3D1B2019201700C87880 /* AddJuegos.swift */; };
 		3A436A1A201B8D0C007223FF /* JuegoDetalle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A436A19201B8D0C007223FF /* JuegoDetalle.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		3A1136E7201256AE006E1B10 /* Juego.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Juego.swift; sourceTree = "<group>"; };
+		3A1BB26C2028BA190066B9EB /* HomeModel2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel2.swift; sourceTree = "<group>"; };
+		3A1BB26E2028BAD00066B9EB /* HomeModel3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel3.swift; sourceTree = "<group>"; };
 		3A1EAC03201A71010025D148 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		3A3C3D1B2019201700C87880 /* AddJuegos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJuegos.swift; sourceTree = "<group>"; };
 		3A436A19201B8D0C007223FF /* JuegoDetalle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuegoDetalle.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				3A8491EA200FE7E500B41EBC /* AppDelegate.swift */,
 				3A1136E7201256AE006E1B10 /* Juego.swift */,
 				3A1EAC03201A71010025D148 /* HomeModel.swift */,
+				3A1BB26C2028BA190066B9EB /* HomeModel2.swift */,
+				3A1BB26E2028BAD00066B9EB /* HomeModel3.swift */,
 				3A8491F1200FE7E500B41EBC /* Assets.xcassets */,
 				3A8491F3200FE7E500B41EBC /* LaunchScreen.storyboard */,
 				3A8491F6200FE7E500B41EBC /* Info.plist */,
@@ -271,6 +277,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A1BB26F2028BAD00066B9EB /* HomeModel3.swift in Sources */,
+				3A1BB26D2028BA190066B9EB /* HomeModel2.swift in Sources */,
 				3A8491ED200FE7E500B41EBC /* VerJuegos.swift in Sources */,
 				3A3C3D1C2019201700C87880 /* AddJuegos.swift in Sources */,
 				3A8491EB200FE7E500B41EBC /* AppDelegate.swift in Sources */,

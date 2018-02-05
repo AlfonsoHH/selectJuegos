@@ -28,9 +28,11 @@ class ViewController2: UIViewController {
         //
         tituloJuego.text = juego.JuegoMesa
         autor.text = juego.Autor
-        tiempo.text = String(describing: juego.TiempoMedio)
-        cooperativo.text = String(describing: juego.Cooperativo)
-        valoracion.text = String(describing: juego.Valoracion)        
+        //let tiempoMedio : Int? = juego.TiempoMedio
+        // tiempoMedioString : String? = String(format:"%f",tiempoMedio)
+        tiempo.text = juego.TiempoMedio
+        cooperativo.text = juego.Cooperativo
+        valoracion.text = juego.Valoracion
     }
 }
 

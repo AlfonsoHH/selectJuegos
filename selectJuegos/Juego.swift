@@ -14,9 +14,9 @@ class Juego: NSObject {
     
     var JuegoMesa: String?
     var Autor: String?
-    var TiempoMedio: Int?
-    var Cooperativo: Int?
-    var Valoracion: Double?
+    var TiempoMedio: String?
+    var Cooperativo: String?
+    var Valoracion: String?
     
     
     //empty constructor
@@ -27,7 +27,7 @@ class Juego: NSObject {
     }
     
     //construct with @name, @address, @latitude, and @longitude parameters
-    init(JuegoMesa: String, Autor: String, TiempoMedio: Int, Cooperativo: Int, Valoracion: Double) {
+    init(JuegoMesa: String, Autor: String, TiempoMedio: String, Cooperativo: String, Valoracion: String) {
         self.JuegoMesa = JuegoMesa
         self.Autor = Autor
         self.TiempoMedio = TiempoMedio

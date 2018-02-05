@@ -1,22 +1,21 @@
 import Foundation
 
 
-protocol HomeModelProtocol: class {
+protocol HomeModel2Protocol: class {
     func itemsDownloaded(items: NSArray)
 }
 
-class HomeModel: NSObject, URLSessionDataDelegate {
-   
-    weak var delegate: HomeModelProtocol!
+class HomeModel2: NSObject, URLSessionDataDelegate {
+    
+    weak var delegate: HomeModel2Protocol!
     //variables
-    //let urlPath = "http://iesayala.ddns.net/mls/SelectJuegosMesa.php"
-    let urlPathAlfon = "http://iesayala.ddns.net/mls/SelectJuegosMesa.php"
+    let urlPathMary = "http://iesayala.ddns.net/mls/NewSelectJuegosMesa.php"
     var jsonResult = NSArray()
     
     //Función para descargar de la base de datos
     func downloadItems() {
         
-        let url: URL = URL(string: urlPathAlfon)!
+        let url: URL = URL(string: urlPathMary)!
         let defaultSession = Foundation.URLSession(configuration: URLSessionConfiguration.default)
         
         let task = defaultSession.dataTask(with: url) { (data, response, error) in
@@ -29,7 +28,6 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             }
         }
         task.resume()
-        
     }
     
     //Función para interpretar el JSON
@@ -64,7 +62,8 @@ class HomeModel: NSObject, URLSessionDataDelegate {
             juegos.add(juego)
         }
         DispatchQueue.main.async(execute: { () -> Void in
-            self.delegate.itemsDownloaded(items: juegos)            
+            self.delegate.itemsDownloaded(items: juegos)
         })
     }
 }
+

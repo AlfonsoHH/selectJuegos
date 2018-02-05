@@ -161,7 +161,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="CtY-bS-pY1">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -307,7 +307,7 @@
                         <outlet property="tiempo" destination="tay-IN-hAJ" id="KeN-DT-Uhg"/>
                         <outlet property="tituloJuego" destination="Y8d-hm-5Ec" id="Z42-aT-MHJ"/>
                         <outlet property="valoracion" destination="aK6-ZE-G9c" id="sbk-5F-h8L"/>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="swipeRight" id="AaD-2N-Zuj"/>
+                        <segue destination="yqa-WW-rFl" kind="modal" identifier="swipeRight" modalPresentationStyle="fullScreen" id="zLh-jL-PFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63p-AL-Cyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -319,7 +319,4 @@
         <image name="Image" width="23" height="24"/>
         <image name="eye" width="48" height="40"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="AaD-2N-Zuj"/>
-    </inferredMetricsTieBreakers>
 </document>

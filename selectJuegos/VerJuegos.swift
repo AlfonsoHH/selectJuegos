@@ -4,32 +4,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
 
     @IBOutlet weak var tableView: UITableView!
-    @IBAction func bt_recargar(_ sender: UIButton) {
-        self.tableView.reloadData()
-    }
+    //variables
     var juegos: NSArray = NSArray()
     var juego : Juego = Juego()
-    
-    //var juegos = NSMutableArray()
     let titulo = "Juegos"
     var Sections_Arr=[Data]()
     var row=0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getFromJSON()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
         
         let homeModel = HomeModel()
         homeModel.delegate = self
         homeModel.downloadItems()        
     }
     
-    
     func itemsDownloaded(items: NSArray) {
-        
         juegos = items
         self.tableView.reloadData()
     }
@@ -39,11 +31,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let fila = tableView.dequeueReusableCell(withIdentifier: "fila", for: indexPath)
         let juegoActual: Juego = juegos[indexPath.row] as! Juego
         fila.textLabel!.text = juegoActual.JuegoMesa
-        print(juegoActual.JuegoMesa)
         fila.detailTextLabel!.text = juegoActual.Autor
         return fila
     }
