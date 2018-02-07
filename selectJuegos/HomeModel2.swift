@@ -2,7 +2,7 @@ import Foundation
 
 
 protocol HomeModel2Protocol: class {
-    func itemsDownloaded(items: NSArray)
+    func itemsDownloaded2(items: NSArray)
 }
 
 class HomeModel2: NSObject, URLSessionDataDelegate {
@@ -21,9 +21,9 @@ class HomeModel2: NSObject, URLSessionDataDelegate {
         let task = defaultSession.dataTask(with: url) { (data, response, error) in
             
             if error != nil {
-                print("Failed to download data")
+                print("Failed to download data Mary")
             }else {
-                print("Data downloaded")
+                print("info Mary descargada")
                 self.parseJSON(data!)
             }
         }
@@ -62,7 +62,7 @@ class HomeModel2: NSObject, URLSessionDataDelegate {
             juegos.add(juego)
         }
         DispatchQueue.main.async(execute: { () -> Void in
-            self.delegate.itemsDownloaded(items: juegos)
+            self.delegate.itemsDownloaded2(items: juegos)
         })
     }
 }

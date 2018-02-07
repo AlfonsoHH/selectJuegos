@@ -80,16 +80,16 @@ class Add: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         print(pvArrayPropietarios[pv_propietario.selectedRow(inComponent: 0)])
         
         request.httpBody = postString.data(using: String.Encoding.utf8)
-        
+       
         let task = URLSession.shared.dataTask(with: request as URLRequest) {
             data, response, error in
             
             if error != nil {
-                print("error=\(error)")
+                print("error")
                 return
             }
             
-            print("response = \(response)")
+            print("response")
             
             // resultado (valor del echo de php)
             
@@ -103,7 +103,7 @@ class Add: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
             }
         }
         task.resume()
-        
+ 
         //preparar alert dialog
         let alertController = UIAlertController(title: "Registro", message:
             "Añadido", preferredStyle: UIAlertControllerStyle.alert)

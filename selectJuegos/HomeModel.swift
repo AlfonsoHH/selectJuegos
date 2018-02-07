@@ -13,7 +13,7 @@ class HomeModel: NSObject, URLSessionDataDelegate {
     let urlPathAlfon = "http://iesayala.ddns.net/mls/SelectJuegosMesa.php"
     var jsonResult = NSArray()
     
-    //Función para descargar de la base de datos
+    //Función para descargar de la base de datos y que llama a la siguiente funcion de parseJSON
     func downloadItems() {
         
         let url: URL = URL(string: urlPathAlfon)!
@@ -22,14 +22,13 @@ class HomeModel: NSObject, URLSessionDataDelegate {
         let task = defaultSession.dataTask(with: url) { (data, response, error) in
             
             if error != nil {
-                print("Failed to download data")
+                print("Failed to download data Alfon")
             }else {
-                print("Data downloaded")
+                print("info Alfon descargada")
                 self.parseJSON(data!)
             }
         }
         task.resume()
-        
     }
     
     //Función para interpretar el JSON

@@ -226,78 +226,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PantallaAppXcode" translatesAutoresizingMaskIntoConstraints="NO" id="7aY-sH-0Kh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <stackView opaque="NO" contentMode="center" axis="vertical" distribution="fillEqually" alignment="center" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="xsh-X3-1YA">
-                                <rect key="frame" x="5" y="25" width="365" height="637"/>
+                                <rect key="frame" x="5" y="163" width="365" height="484"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITULO JUEGO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itL-mS-awP">
-                                        <rect key="frame" x="104" y="0.0" width="157.5" height="51"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITULO JUEGO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itL-mS-awP">
+                                        <rect key="frame" x="120" y="0.0" width="125" height="36"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <size key="shadowOffset" width="-3" height="-1"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="JuegoTitulo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8d-hm-5Ec">
-                                        <rect key="frame" x="138.5" y="65" width="88.5" height="51"/>
+                                        <rect key="frame" x="138.5" y="50" width="88.5" height="35.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUTOR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yra-5k-fnJ">
-                                        <rect key="frame" x="145" y="130" width="75.5" height="51.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUTOR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yra-5k-fnJ">
+                                        <rect key="frame" x="152" y="99.5" width="61.5" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <size key="shadowOffset" width="-3" height="-1"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfJ-gA-yfM">
-                                        <rect key="frame" x="161.5" y="195.5" width="42" height="51"/>
+                                        <rect key="frame" x="161.5" y="149.5" width="42" height="35.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIEMPO MEDIO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Keu-xt-htA">
-                                        <rect key="frame" x="103" y="260.5" width="159" height="51"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIEMPO MEDIO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Keu-xt-htA">
+                                        <rect key="frame" x="119.5" y="199" width="126" height="36"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <size key="shadowOffset" width="-3" height="-1"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiempo medio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tay-IN-hAJ">
-                                        <rect key="frame" x="128" y="325.5" width="109" height="51"/>
+                                        <rect key="frame" x="128" y="249" width="109" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COOPERATIVO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-XX-u8I">
-                                        <rect key="frame" x="104.5" y="390.5" width="156.5" height="51"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COOPERATIVO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grh-XX-u8I">
+                                        <rect key="frame" x="121" y="299" width="123" height="35.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <size key="shadowOffset" width="-3" height="-1"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cooperativo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-43-ht7">
-                                        <rect key="frame" x="137" y="455.5" width="91" height="51.5"/>
+                                        <rect key="frame" x="137" y="348.5" width="91" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALORACION" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIF-5U-JpD">
-                                        <rect key="frame" x="111.5" y="521" width="142.5" height="51"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VALORACION" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIF-5U-JpD">
+                                        <rect key="frame" x="126.5" y="398.5" width="112" height="35.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <color key="shadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <size key="shadowOffset" width="-3" height="-1"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valoración" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aK6-ZE-G9c">
-                                        <rect key="frame" x="142.5" y="586" width="80" height="51"/>
+                                        <rect key="frame" x="142.5" y="448" width="80" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="WdW-Tf-t7e" firstAttribute="bottom" secondItem="xsh-X3-1YA" secondAttribute="bottom" constant="5" id="7Nx-nY-1GL"/>
-                            <constraint firstItem="xsh-X3-1YA" firstAttribute="top" secondItem="WdW-Tf-t7e" secondAttribute="top" constant="5" id="Cw2-5Q-wLJ"/>
+                            <constraint firstItem="xsh-X3-1YA" firstAttribute="leading" secondItem="WdW-Tf-t7e" secondAttribute="leading" constant="5" id="DMT-FH-M4p"/>
+                            <constraint firstItem="xsh-X3-1YA" firstAttribute="top" secondItem="WdW-Tf-t7e" secondAttribute="top" constant="143" id="Xct-qh-R7g"/>
                             <constraint firstItem="WdW-Tf-t7e" firstAttribute="trailing" secondItem="xsh-X3-1YA" secondAttribute="trailing" constant="5" id="YRU-t2-tPw"/>
                             <constraint firstItem="xsh-X3-1YA" firstAttribute="leading" secondItem="WdW-Tf-t7e" secondAttribute="leading" constant="5" id="ddC-65-pCu"/>
+                            <constraint firstItem="WdW-Tf-t7e" firstAttribute="bottom" secondItem="xsh-X3-1YA" secondAttribute="bottom" constant="20" id="h1Q-dx-0bB"/>
+                            <constraint firstItem="WdW-Tf-t7e" firstAttribute="trailing" secondItem="xsh-X3-1YA" secondAttribute="trailing" constant="5" id="vwa-B0-18m"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WdW-Tf-t7e"/>
                     </view>
@@ -312,11 +330,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="63p-AL-Cyh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-506" y="824"/>
+            <point key="canvasLocation" x="-506.39999999999998" y="823.53823088455783"/>
         </scene>
     </scenes>
     <resources>
         <image name="Image" width="23" height="24"/>
+        <image name="PantallaAppXcode" width="750" height="1334"/>
         <image name="eye" width="48" height="40"/>
     </resources>
 </document>

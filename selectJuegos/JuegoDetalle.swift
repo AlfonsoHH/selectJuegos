@@ -28,14 +28,17 @@ class ViewController2: UIViewController {
         //
         tituloJuego.text = juego.JuegoMesa
         autor.text = juego.Autor
-        //let tiempoMedio : Int? = juego.TiempoMedio
-        // tiempoMedioString : String? = String(format:"%f",tiempoMedio)
         tiempo.text = juego.TiempoMedio
-        cooperativo.text = juego.Cooperativo
+        if juego.Cooperativo == "0"{
+            cooperativo.text = "Competitivo"
+        }else{
+            cooperativo.text = "Cooperativo"
+        }
+        //cooperativo.text = juego.Cooperativo
+        
         valoracion.text = juego.Valoracion
     }
 }
-
 
 extension UIViewController
 {

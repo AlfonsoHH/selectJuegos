@@ -2,7 +2,7 @@ import Foundation
 
 
 protocol HomeModel3Protocol: class {
-    func itemsDownloaded(items: NSArray)
+    func itemsDownloaded3(items: NSArray)
 }
 
 class HomeModel3: NSObject, URLSessionDataDelegate {
@@ -21,14 +21,13 @@ class HomeModel3: NSObject, URLSessionDataDelegate {
         let task = defaultSession.dataTask(with: url) { (data, response, error) in
             
             if error != nil {
-                print("Failed to download data")
+                print("Failed to download data WL")
             }else {
-                print("Data downloaded")
+                print("info WL descargada")
                 self.parseJSON(data!)
             }
         }
-        task.resume()
-        
+        task.resume()        
     }
     
     //Función para interpretar el JSON
@@ -63,7 +62,7 @@ class HomeModel3: NSObject, URLSessionDataDelegate {
             juegos.add(juego)
         }
         DispatchQueue.main.async(execute: { () -> Void in
-            self.delegate.itemsDownloaded(items: juegos)
+            self.delegate.itemsDownloaded3(items: juegos)
         })
     }
 }
