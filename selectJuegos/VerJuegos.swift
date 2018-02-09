@@ -12,6 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var juego : Juego = Juego()
     let titulo = "Juegos"
+    let cabecera: [String] = ["Juegos Alfon", "Juegos Mary", "Juegos Deseados" ]
     var Sections_Arr=[Data]()
     var row=0
     
@@ -38,24 +39,31 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             juegos3
         ]
         
-        //var array = juegoTest[0] as! NSArray
-        //print (juegos.count)
+        print ("total juegos en el oncreate \(juegos.count)")
+        print ("total juegos2 en el oncreate \(juegos2.count)")
+        print ("total juegos3 en el oncreate \(juegos3.count)")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+            print("dentro del dispatch")
+            self.tableView.reloadData()
+        })
+        //DispatchQueue.main.async { self.tableView.reloadData() }
     }
     
     //llama a la funcion para descargar los objetos
     func itemsDownloaded(items: NSArray) {
         juegos = items
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     func itemsDownloaded2(items: NSArray) {
         juegos2 = items
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     func itemsDownloaded3(items: NSArray) {
         juegos3 = items
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     //funcion que dice el numero de filas segun el tamaño del array
@@ -66,40 +74,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func numberOfSections(in tableView: UITableView) -> Int {
         return juegoTest.count
     }
-    /*
-    //funcion que introduce los datos en cada fila
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let fila = tableView.dequeueReusableCell(withIdentifier: "fila", for: indexPath)
-        let juegoActual: Juego = juegos[indexPath.row] as! Juego
-        fila.textLabel!.text = juegoActual.JuegoMesa
-        fila.detailTextLabel!.text = juegoActual.Autor
-        return fila
-    }
-     let fila = tableView.dequeueReusableCell(withIdentifier: "fila", for: indexPath) as! filacustomizadaTableViewCell
-     fila.textLabel?.text = data[indexPath.section][indexPath.row]
-    */
     
     //funcion que introduce los datos en cada fila
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let fila = tableView.dequeueReusableCell(withIdentifier: "fila", for: indexPath)
+
+        print("total juegosArray en el tableView \(juegoTest.count)")
+        print ("total juegos en el tableView \(juegos.count)")
+        print ("total juegos2 en el tableView \(juegos2.count)")
+        print ("total juegos3 en el tableView \(juegos3.count)")
         
-        /*juegoTest = [
+        juegoTest = [
             juegos,
             juegos2,
             juegos3
-        ]*/
-        print(juegos3.count)
-        //var array = juegoTest[indexPath.section] as! NSArray
-        //var juegoActual: Juego = array[indexPath.row] as! Juego
-        //print (juegoActual.JuegoMesa)
-        //fila.textLabel!.text = juegoActual.JuegoMesa!
-        //fila.detailTextLabel!.text = juegoActual.Autor
+        ]
+        
+        var array = juegoTest[indexPath.section] as! NSArray
+    
+
+            var juegoActual: Juego = array[indexPath.row] as! Juego
+            fila.textLabel!.text = juegoActual.JuegoMesa!
+            fila.detailTextLabel!.text = juegoActual.Autor!
+
         return fila
+            
     }
     
     //titulo para cada seccion
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return titulo
+        return cabecera[section]
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
@@ -114,5 +119,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
+
 }
 

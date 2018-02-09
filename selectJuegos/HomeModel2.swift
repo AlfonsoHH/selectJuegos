@@ -40,7 +40,6 @@ class HomeModel2: NSObject, URLSessionDataDelegate {
         //variables
         var jsonElement = NSDictionary()
         let juegos = NSMutableArray()
-        
         for i in 0 ..< jsonResult.count
         {
             jsonElement = jsonResult[i] as! NSDictionary

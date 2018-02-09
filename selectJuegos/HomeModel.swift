@@ -9,7 +9,6 @@ class HomeModel: NSObject, URLSessionDataDelegate {
    
     weak var delegate: HomeModelProtocol!
     //variables
-    //let urlPath = "http://iesayala.ddns.net/mls/SelectJuegosMesa.php"
     let urlPathAlfon = "http://iesayala.ddns.net/mls/SelectJuegosMesa.php"
     var jsonResult = NSArray()
     
