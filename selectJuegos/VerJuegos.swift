@@ -18,6 +18,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
@@ -68,7 +71,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //funcion que dice el numero de filas segun el tamaño del array
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return juegos.count
+        if(juegos.count>juegos2.count){
+            if(juegos.count>juegos3.count){
+                return juegos.count
+            }else{
+                return juegos3.count
+            }
+        }else{
+            if(juegos2.count>juegos3.count){
+                return juegos2.count
+            }else{
+                return juegos3.count
+            }
+        }
+        
+        
     }
     //función que dice el numero de secciones
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -93,11 +110,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         var array = juegoTest[indexPath.section] as! NSArray
     
-
+        if(array.count-1<indexPath.row){
+            fila.textLabel!.text = " "
+            fila.detailTextLabel!.text = " "
+        }else{
             var juegoActual: Juego = array[indexPath.row] as! Juego
             fila.textLabel!.text = juegoActual.JuegoMesa!
             fila.detailTextLabel!.text = juegoActual.Autor!
-
+        }
         return fila
             
     }

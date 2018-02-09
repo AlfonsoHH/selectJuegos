@@ -113,9 +113,7 @@ class Add: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         
         tf_nombre.text = ""
         tf_autor.text = ""
-        tf_tiempo.text = ""
-        
-        
+        tf_tiempo.text = ""        
     }
     
     

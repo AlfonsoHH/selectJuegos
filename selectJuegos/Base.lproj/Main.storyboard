@@ -76,7 +76,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="B4e-zt-87s">
-                                        <rect key="frame" x="-2" y="250.5" width="379" height="20.5"/>
+                                        <rect key="frame" x="8" y="250.5" width="359" height="20.5"/>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Propietario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGc-Se-Gdl">
                                         <rect key="frame" x="146" y="278" width="83.5" height="20"/>
@@ -85,6 +85,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="B4e-zt-87s" secondAttribute="trailing" constant="10" id="FW7-DS-aXj"/>
+                                    <constraint firstItem="B4e-zt-87s" firstAttribute="leading" secondItem="e5l-On-Cdx" secondAttribute="leading" constant="10" id="jAY-d0-eyA"/>
+                                </constraints>
                             </stackView>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WeQ-pb-mK8">
                                 <rect key="frame" x="27" y="446" width="320" height="52"/>
@@ -99,6 +103,7 @@
                                 </state>
                                 <connections>
                                     <action selector="Add:" destination="9Dx-wd-YIn" eventType="touchUpInside" id="hMu-jk-VlD"/>
+                                    <segue destination="yqa-WW-rFl" kind="show" id="fZ8-DW-iTz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -344,4 +349,7 @@
         <image name="PantallaAppXcode" width="750" height="1334"/>
         <image name="eye" width="48" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="zLh-jL-PFu"/>
+    </inferredMetricsTieBreakers>
 </document>
